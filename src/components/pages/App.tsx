@@ -62,6 +62,7 @@ function App() {
                 pointIdx = idx;
                 return true;
             }
+            return false;
         });
         if (value==="PROGRESS" && savedList[pointIdx][key]!=="TODO") return savedList;
         if (value==="DONE" && savedList[pointIdx][key]!=="PROGRESS") return savedList;
@@ -79,6 +80,7 @@ function App() {
                     pointIdx = idx;
                     return true;
                 }
+                return false;
             });
             if (value==="PROGRESS" && savedList[pointIdx][key]!=="TODO") return;
             if (value==="DONE" && savedList[pointIdx][key]!=="PROGRESS") return;
