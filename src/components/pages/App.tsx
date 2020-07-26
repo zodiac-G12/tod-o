@@ -97,7 +97,7 @@ function App() {
                 <Flexy>
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
-                            <MatrixCrown>
+                            <MatrixCrown key={`mtc-${category}`}>
                                 <Flex>
                                     <NumEye>
                                         {list.filter(item=>item.category===category).length}
@@ -136,10 +136,10 @@ function App() {
                 <Flexy>
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
-                            <Matrix>
+                            <Matrix key={`mt-${category}`}>
                                 {list.filter(item=>item.category===category).map((item, index)=>{
                                     return (
-                                        <Accordion style={{marginTop: "1vh"}}>
+                                        <Accordion key={`ac-${index}-${item}`} style={{marginTop: "1vh"}}>
                                             <AccordionSummary
                                               expandIcon={<ExpandMoreIcon />}
                                               aria-label="Expand"
@@ -194,7 +194,7 @@ function App() {
                                                 </div>
                                             </AccordionSummary>
                                             <AccordionDetails>
-                                                <Typography color="textSecondary">
+                                                <Typography component={'div'} color="textSecondary">
                                                     <DescriptionInput
                                                         value={item.description}
                                                         onChange={(e)=>{
@@ -218,7 +218,7 @@ function App() {
                                                     </div>
                                                     {["LOW","MEDIUM","HIGH","CRITICAL","PENDING"].map(degree => {
                                                         return (
-                                                            <Chip label={degree} style={{
+                                                            <Chip key={`ch-${degree}`} label={degree} style={{
                                                                 color:item.degree!==degree?"rgba(0,0,0,0.87)":"white",
                                                                 background: item.degree!==degree?"#e0e0e0":(degree==="CRITICAL"?"red":(degree==="HIGH"?"orange":(degree==="MEDIUM"?"green":(degree==="PENDING"?"indigo":"blue"))))
                                                                 }}
