@@ -111,7 +111,7 @@ function App() {
                 {/*<Flexy key="flexy-0">*/}
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
-                            <MatrixCrown key={`mtc-${category}`}>
+                            <div style={MatrixCrown} key={`mtc-${category}`}>
                                 {/*<Flex key={`mtc-${category}-0-flex`}>*/}
                                 <div style={{display:"flex"}}>
                                     <NumEye>
@@ -147,7 +147,8 @@ function App() {
                                     )}
                                 </div>
                                 {/*</Flex>*/}
-                            </MatrixCrown>
+                                {/*</MatrixCrown>*/}
+                            </div>
                         );
                     })}
                 {/*</Flexy>*/}
@@ -299,19 +300,20 @@ const DescriptionInput = styled.textarea`
     resize: none;
 `;
 
-const MatrixCrown = styled.div`
-    display: flex;
-    overflow: scroll;
-    justify-content: space-between;
-    height: 7.5vh;
-    padding: 4vh 4vh 0 4vh;
-    width: calc((90vw - 20vh) / 3);
-    line-height: 3.5vh;
-    background: lightsteelblue;
-    border: solid 1px darkslategray;
-    border-radius: 0.5vh 0.5vh 0 0;
-    border-bottom: none;
-`;
+// const MatrixCrown = styled.div`
+const MatrixCrown = {
+    display: "flex",
+    overflow: "scroll",
+    justifyContent: "space-between",
+    height: "7.5vh",
+    padding: "4vh 4vh 0 4vh",
+    width: "calc((90vw - 20vh) / 3)",
+    lineHeight: "3.5vh",
+    background: "lightsteelblue",
+    border: "solid 1px darkslategray",
+    borderRadius: "0.5vh 0.5vh 0 0",
+    borderBottom: "none"
+};
 
 const NumEye = styled.div`
     margin-right: 1vw;
