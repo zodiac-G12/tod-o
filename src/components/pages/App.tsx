@@ -25,6 +25,11 @@ import CrownHead from '../organisms/CrownHead';
 // modules
 import sampleTodoData from '../../modules/sampleTodoData';
 
+// TODO test (styled-components bug?)
+import Crown from '../atoms/Crown';
+import Centerizer from '../atoms/Centerizer';
+import Title from '../atoms/Title';
+import TodoIcon from '../atoms/TodoIcon';
 // TODO vh
 // TODO component分ける
 // TODO Error Handling
@@ -92,7 +97,14 @@ function App() {
 
     return (
         <>
-            <CrownHead />
+            {/* TODO TEST <CrownHead />*/}
+            <Crown>
+                <Centerizer>
+                    <TodoIcon height={"7.5vh"} width={"5vh"} />
+                    <Title>todo</Title>
+                </Centerizer>
+            </Crown>
+            {/*TEST*/}
             <Container>
                 <Flexy>
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
