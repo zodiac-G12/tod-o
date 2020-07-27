@@ -6,8 +6,6 @@ const Matrix = styled.div`
     height: 65vh;
     border: solid 1px darkslategray;
     border-top: none;
-    // border-radius: 0 0 0.5vh 0.5vh;
-    // background: khaki;
     background: lightsteelblue;
     overflow-y: scroll;
     width: calc((90vw - 20vh) / 3);

@@ -8,7 +8,6 @@ const Crown = styled.div`
     font-family: 'Ranchers', cursive;
     font-weight: bold;
     padding: 0;
-    // line-height: 7.5vh;
     display: flex;
     font-size: 4vh;
     color: snow;
