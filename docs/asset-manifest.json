@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/tod-o/static/js/main.bc246e19.chunk.js",
-    "main.js.map": "/tod-o/static/js/main.bc246e19.chunk.js.map",
+    "main.js": "/tod-o/static/js/main.1c39bc53.chunk.js",
+    "main.js.map": "/tod-o/static/js/main.1c39bc53.chunk.js.map",
     "runtime-main.js": "/tod-o/static/js/runtime-main.34c64505.js",
     "runtime-main.js.map": "/tod-o/static/js/runtime-main.34c64505.js.map",
-    "static/js/2.e80177dc.chunk.js": "/tod-o/static/js/2.e80177dc.chunk.js",
-    "static/js/2.e80177dc.chunk.js.map": "/tod-o/static/js/2.e80177dc.chunk.js.map",
+    "static/js/2.10cb54ee.chunk.js": "/tod-o/static/js/2.10cb54ee.chunk.js",
+    "static/js/2.10cb54ee.chunk.js.map": "/tod-o/static/js/2.10cb54ee.chunk.js.map",
     "index.html": "/tod-o/index.html",
-    "precache-manifest.3dccc10ca76b0964b0133d10eea86b6a.js": "/tod-o/precache-manifest.3dccc10ca76b0964b0133d10eea86b6a.js",
+    "precache-manifest.895655ee00f980b22abb7375759419b8.js": "/tod-o/precache-manifest.895655ee00f980b22abb7375759419b8.js",
     "service-worker.js": "/tod-o/service-worker.js",
-    "static/js/2.e80177dc.chunk.js.LICENSE.txt": "/tod-o/static/js/2.e80177dc.chunk.js.LICENSE.txt",
+    "static/js/2.10cb54ee.chunk.js.LICENSE.txt": "/tod-o/static/js/2.10cb54ee.chunk.js.LICENSE.txt",
     "static/media/sea-lion.svg": "/tod-o/static/media/sea-lion.2f163542.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.34c64505.js",
-    "static/js/2.e80177dc.chunk.js",
-    "static/js/main.bc246e19.chunk.js"
+    "static/js/2.10cb54ee.chunk.js",
+    "static/js/main.1c39bc53.chunk.js"
   ]
 }

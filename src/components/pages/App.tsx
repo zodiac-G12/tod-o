@@ -16,8 +16,8 @@ import Slider from '@material-ui/core/Slider';
 import TextField from '@material-ui/core/TextField';
 
 // atoms components
-import Container from '../atoms/Container';
-import Matrix from '../atoms/Matrix';
+// import Container from '../atoms/Container';
+// import Matrix from '../atoms/Matrix';
 
 // organisms components
 // import CrownHead from '../organisms/CrownHead';
@@ -26,10 +26,11 @@ import Matrix from '../atoms/Matrix';
 import sampleTodoData from '../../modules/sampleTodoData';
 
 // TODO test (styled-components bug?)
-import Crown from '../atoms/Crown';
-import Centerizer from '../atoms/Centerizer';
-import Title from '../atoms/Title';
+// import Crown from '../atoms/Crown';
+// import Centerizer from '../atoms/Centerizer';
+// import Title from '../atoms/Title';
 import TodoIcon from '../atoms/TodoIcon';
+
 // TODO vh
 // TODO component分ける
 // TODO Error Handling
@@ -321,6 +322,57 @@ const Flex = styled.div`
 const Flexy = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+
+const Crown = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+    font-family: 'Ranchers', cursive;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    font-size: 4vh;
+    color: snow;
+    user-select: none;
+    text-align: center;
+    background: royalblue;
+`;
+
+const Centerizer = styled.div`
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: auto;
+    display: flex;
+`;
+
+const Title = styled.div`
+    margin-left: 1vh;
+    height: 7.5vh;
+    line-height: 7.5vh;
+`;
+
+const Container = styled.div`
+    background: lightcyan;
+    min-width: calc(100vw - 10vh);
+    overflow-x: scroll;
+    height: 82.5vh;
+    margin-top: 7.5vh;
+    padding: 5vh;
+    overflow-y: scroll;
+`;
+
+const Matrix = styled.div`
+    padding: 4vh;
+    padding-top: 1vh;
+    height: 65vh;
+    border: solid 1px darkslategray;
+    border-top: none;
+    background: lightsteelblue;
+    overflow-y: scroll;
+    width: calc((90vw - 20vh) / 3);
 `;
 
 export default App;
