@@ -96,7 +96,7 @@ function App() {
     };
 
     return (
-        <>
+        <div>
             {/* TODO TEST <CrownHead />*/}
             <Crown>
                 <Centerizer>
@@ -265,7 +265,7 @@ function App() {
                     })}
                 </Flexy>
             </Container>
-        </>
+        </div>
     );
 }
 
