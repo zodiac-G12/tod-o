@@ -107,18 +107,21 @@ function App() {
             </Crown>
             {/*TEST*/}
             <Container>
-                {/*<div style={{display:"flex", justifyContent:"space-between"}}>*/}
-                <Flexy key="flexy-0">
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                {/*<Flexy key="flexy-0">*/}
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
                             <MatrixCrown key={`mtc-${category}`}>
-                                <Flex key={`mtc-${category}-0-flex`}>
+                                {/*<Flex key={`mtc-${category}-0-flex`}>*/}
+                                <div style={{display:"flex"}}>
                                     <NumEye>
                                         {list.filter(item=>item.category===category).length}
                                     </NumEye>
                                     <div style={{fontSize:"2vh",fontWeight:"bold"}}>{category}</div>
-                                </Flex>
-                                <Flex key={`mtc-${category}-1-flex`}>
+                                {/*</Flex>
+                                <Flex key={`mtc-${category}-1-flex`}>*/}
+                                </div>
+                                <div style={{display:"flex"}}>
                                     <AddIcon onClick={()=>{ setList(addList(category)); }} />
                                     <DeleteIcon
                                         onClick={()=>{
@@ -142,12 +145,15 @@ function App() {
                                             }}
                                         />
                                     )}
-                                </Flex>
+                                </div>
+                                {/*</Flex>*/}
                             </MatrixCrown>
                         );
                     })}
-                </Flexy>
-                <Flexy key="flexy-1">
+                {/*</Flexy>*/}
+                </div>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                {/*<Flexy key="flexy-1">*/}
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
                             <Matrix key={`mt-${category}`}>
@@ -265,7 +271,8 @@ function App() {
                             </Matrix>
                         );
                     })}
-                </Flexy>
+                {/*</Flexy>*/}
+                </div>
             </Container>
         </div>
     );
