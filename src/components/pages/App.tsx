@@ -107,17 +107,18 @@ function App() {
             </Crown>
             {/*TEST*/}
             <Container>
-                <Flexy>
+                {/*<div style={{display:"flex", justifyContent:"space-between"}}>*/}
+                <Flexy key="flexy-0">
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
                             <MatrixCrown key={`mtc-${category}`}>
-                                <Flex>
+                                <Flex key={`mtc-${category}-0-flex`}>
                                     <NumEye>
                                         {list.filter(item=>item.category===category).length}
                                     </NumEye>
                                     <div style={{fontSize:"2vh",fontWeight:"bold"}}>{category}</div>
                                 </Flex>
-                                <Flex>
+                                <Flex key={`mtc-${category}-1-flex`}>
                                     <AddIcon onClick={()=>{ setList(addList(category)); }} />
                                     <DeleteIcon
                                         onClick={()=>{
@@ -146,7 +147,7 @@ function App() {
                         );
                     })}
                 </Flexy>
-                <Flexy>
+                <Flexy key="flexy-1">
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
                             <Matrix key={`mt-${category}`}>
