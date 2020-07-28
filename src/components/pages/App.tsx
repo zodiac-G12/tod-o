@@ -92,7 +92,7 @@ function App() {
     };
 
     return (
-        <div>
+        <>
             <CrownHead />
             <Container>
                 <Flexy>
@@ -175,7 +175,7 @@ function App() {
                                                         />
                                                     }
                                                 />
-                                                <div style={{display:"flex"}}>
+                                                <Flex>
                                                     <Chip style={{height: "3vh", padding:"0", marginTop: "0.5vh", color:"white",
                                                         background: item.degree==="CRITICAL"?"red":(item.degree==="HIGH"?"orange":(item.degree==="MEDIUM"?"green":(item.degree==="PENDING"?"indigo":"blue")))
                                                     }} label={item.degree} />
@@ -192,7 +192,7 @@ function App() {
                                                         style={{height: "3vh", marginTop:"0.5vh", marginLeft:"0.5vh"}}
                                                         label={new Date((new Date(item.dead_line) as any) - (new Date() as any)).getDate()-1+"days"}
                                                     />
-                                                </div>
+                                                </Flex>
                                             </AccordionSummary>
                                             <AccordionDetails>
                                                 <Typography component={'div'} color="textSecondary">
@@ -203,7 +203,7 @@ function App() {
                                                             setList(saveList("description", value, item.id));
                                                         }}
                                                     />
-                                                    <div style={{display:"flex", justifyContent:"space-between", marginBottom:"2vh"}}>
+                                                    <Flexy style={{marginBottom:"2vh"}}>
                                                         <div style={{marginRight:"1vh",color:"black"}}>Completeness:</div>
                                                         <GolfCourseIcon style={{marginRight:"2vh"}}/>
                                                         <Slider
@@ -216,7 +216,7 @@ function App() {
                                                             }}
                                                         />
                                                         <div style={{marginLeft:"2vh", width:"5vh", color:"black"}}>[%]</div>
-                                                    </div>
+                                                    </Flexy>
                                                     {["LOW","MEDIUM","HIGH","CRITICAL","PENDING"].map(degree => {
                                                         return (
                                                             <Chip key={`ch-${degree}`} label={degree} style={{
@@ -254,7 +254,7 @@ function App() {
                     })}
                 </Flexy>
             </Container>
-        </div>
+        </>
     );
 }
 
@@ -297,6 +297,7 @@ const NumEye = styled.div`
     margin-right: 1vw;
     height: 3.5vh;
     width: 3.5vh;
+    line-height: 3.5vh;
     text-align: center;
     border-radius: 40%;
     color: white;
