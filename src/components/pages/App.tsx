@@ -17,20 +17,14 @@ import Slider from '@material-ui/core/Slider';
 import TextField from '@material-ui/core/TextField';
 
 // atoms components
-// import Container from '../atoms/Container';
-// import Matrix from '../atoms/Matrix';
+import Container from '../atoms/Container';
+import Matrix from '../atoms/Matrix';
 
 // organisms components
-// import CrownHead from '../organisms/CrownHead';
+import CrownHead from '../organisms/CrownHead';
 
 // modules
 import sampleTodoData from '../../modules/sampleTodoData';
-
-// TODO test (styled-components bug?)
-// import Crown from '../atoms/Crown';
-// import Centerizer from '../atoms/Centerizer';
-// import Title from '../atoms/Title';
-import TodoIcon from '../atoms/TodoIcon';
 
 // TODO vh
 // TODO component分ける
@@ -99,30 +93,19 @@ function App() {
 
     return (
         <div>
-            {/* TODO TEST <CrownHead />*/}
-            <Crown>
-                <Centerizer>
-                    <TodoIcon height={"7.5vh"} width={"5vh"} />
-                    <Title>todo</Title>
-                </Centerizer>
-            </Crown>
-            {/*TEST*/}
+            <CrownHead />
             <Container>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
-                {/*<Flexy key="flexy-0">*/}
+                <Flexy>
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
-                            <div style={MatrixCrown} key={`mtc-${category}`}>
-                                {/*<Flex key={`mtc-${category}-0-flex`}>*/}
-                                <div style={{display:"flex"}}>
+                            <MatrixCrown key={`mtc-${category}`}>
+                                <Flex key={`mtc-${category}-0-flex`}>
                                     <NumEye>
                                         {list.filter(item=>item.category===category).length}
                                     </NumEye>
                                     <div style={{fontSize:"2vh",fontWeight:"bold"}}>{category}</div>
-                                {/*</Flex>
-                                <Flex key={`mtc-${category}-1-flex`}>*/}
-                                </div>
-                                <div style={{display:"flex"}}>
+                                </Flex>
+                                <Flex key={`mtc-${category}-1-flex`}>
                                     <AddIcon onClick={()=>{ setList(addList(category)); }} />
                                     <DeleteIcon
                                         onClick={()=>{
@@ -146,16 +129,12 @@ function App() {
                                             }}
                                         />
                                     )}
-                                </div>
-                                {/*</Flex>*/}
-                                {/*</MatrixCrown>*/}
-                            </div>
+                                </Flex>
+                            </MatrixCrown>
                         );
                     })}
-                {/*</Flexy>*/}
-                </div>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
-                {/*<Flexy key="flexy-1">*/}
+                </Flexy>
+                <Flexy>
                     {["TODO", "PROGRESS", "DONE"].map((category) => {
                         return (
                             <Matrix key={`mt-${category}`}>
@@ -273,8 +252,7 @@ function App() {
                             </Matrix>
                         );
                     })}
-                {/*</Flexy>*/}
-                </div>
+                </Flexy>
             </Container>
         </div>
     );
@@ -301,20 +279,19 @@ const DescriptionInput = styled.textarea`
     resize: none;
 `;
 
-// const MatrixCrown = styled.div`
-const MatrixCrown = {
-    display: "flex",
-    overflow: "scroll",
-    justifyContent: "space-between",
-    height: "7.5vh",
-    padding: "4vh 4vh 0 4vh",
-    width: "calc((90vw - 20vh) / 3)",
-    lineHeight: "3.5vh",
-    background: "lightsteelblue",
-    border: "solid 1px darkslategray",
-    borderRadius: "0.5vh 0.5vh 0 0",
-    borderBottom: "none"
-};
+const MatrixCrown = styled.div`
+    display: flex;
+    overflow: scroll;
+    justify-content: space-between;
+    height: 7.5vh;
+    padding: 4vh 4vh 0 4vh;
+    width: calc((90vw - 20vh) / 3);
+    lineHeight: 3.5vh;
+    background: lightsteelblue;
+    border: solid 1px darkslategray;
+    border-radius: 0.5vh 0.5vh 0 0;
+    border-bottom: none;
+`;
 
 const NumEye = styled.div`
     margin-right: 1vw;
@@ -333,57 +310,6 @@ const Flex = styled.div`
 const Flexy = styled.div`
     display: flex;
     justify-content: space-between;
-`;
-
-const Crown = styled.div`
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
-    font-family: 'Ranchers', cursive;
-    font-weight: bold;
-    padding: 0;
-    display: flex;
-    font-size: 4vh;
-    color: snow;
-    user-select: none;
-    text-align: center;
-    background: royalblue;
-`;
-
-const Centerizer = styled.div`
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: auto;
-    display: flex;
-`;
-
-const Title = styled.div`
-    margin-left: 1vh;
-    height: 7.5vh;
-    line-height: 7.5vh;
-`;
-
-const Container = styled.div`
-    background: lightcyan;
-    min-width: calc(100vw - 10vh);
-    overflow-x: scroll;
-    height: 82.5vh;
-    margin-top: 7.5vh;
-    padding: 5vh;
-    overflow-y: scroll;
-`;
-
-const Matrix = styled.div`
-    padding: 4vh;
-    padding-top: 1vh;
-    height: 65vh;
-    border: solid 1px darkslategray;
-    border-top: none;
-    background: lightsteelblue;
-    overflow-y: scroll;
-    width: calc((90vw - 20vh) / 3);
 `;
 
 export default App;
