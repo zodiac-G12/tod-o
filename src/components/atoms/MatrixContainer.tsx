@@ -1,7 +1,7 @@
 // import styled from 'styled-components';
 import styled from '@emotion/styled';
 
-const Matrix = styled.div`
+const MatrixContainer = styled.div`
     padding: 4vh;
     padding-top: 1vh;
     height: 65vh;
@@ -12,4 +12,4 @@ const Matrix = styled.div`
     width: calc((90vw - 20vh) / 3);
 `;
 
-export default Matrix;
+export default MatrixContainer;

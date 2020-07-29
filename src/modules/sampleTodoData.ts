@@ -1,4 +1,20 @@
-const sampleTodoData = (id: number, category: string, locale: string) => {
+type ListItem = {
+    id: number,
+    title: string,
+    description: string,
+    dead_line: string,
+    degree: string,
+    project_id: string,
+    completeness: number,
+    category: string,
+    created: string
+};
+
+type List = ListItem[];
+
+export const sampleTodoDataFunc = (id: number, category: string): List => {
+    const locale = window.navigator.language;
+
     return [{
         id: id,
         title: "sample title",
@@ -34,5 +50,3 @@ const sampleTodoData = (id: number, category: string, locale: string) => {
         created: new Date().toLocaleString(locale)
     }];
 };
-
-export default sampleTodoData;
