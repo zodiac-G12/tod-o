@@ -7,7 +7,7 @@ const TitleInput = styled.input`
     resize: none;
     color: black;
     font-weight: bold;
-    width: 100%;
+    width: 70%;
     margin-right: 5vh;
 `;
 

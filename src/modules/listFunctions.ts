@@ -15,6 +15,43 @@ type ListItem = {
 type List = ListItem[];
 
 // Around List Functions
+export const exchangeList = (id1: number, id2: number, list: List): List => {
+    const savedList = JSON.parse(JSON.stringify(list));
+    let pointIdx1: number|undefined,
+        pointIdx2: number|undefined;
+
+    if (id1 === id2) return savedList;
+
+    // absolutely exist "idx"
+    savedList.some((item: ListItem, idx: number)=>{
+        if (item.id===id1) {
+            pointIdx1 = idx;
+            return true;
+        }
+        return false;
+    });
+    if (pointIdx1 !== 0 && !pointIdx1) return savedList;
+
+    // absolutely exist "idx"
+    savedList.some((item: ListItem, idx: number)=>{
+        if (item.id===id2) {
+            pointIdx2 = idx;
+            return true;
+        }
+        return false;
+    });
+    if (pointIdx2 !== 0 && !pointIdx2) return savedList;
+
+    const item1 = savedList[pointIdx1],
+          item2 = savedList[pointIdx2];
+
+    savedList[pointIdx2] = item1;
+    savedList[pointIdx1] = item2;
+
+    localStorage.todoDatas = JSON.stringify(savedList);
+    return savedList;
+}
+
 export const addList = (category: string, list: List): List => {
     const newId = list.length!==0 ? list[list.length-1].id + 1 : 1;
     const addedList = list.concat(sampleTodoDataFunc(newId, category));

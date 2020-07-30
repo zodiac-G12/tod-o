@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 
-// dnd
-import {SortableContainer, SortableElement} from 'react-sortable-hoc';
-import arrayMove from 'array-move';
-
 // atoms components
 import Flexy from '../atoms/Flexy';
 import Container from '../atoms/Container';
@@ -15,7 +11,7 @@ import Matrix from '../organisms/Matrix';
 
 // modules
 import { sampleTodoDataFunc } from '../../modules/sampleTodoData';
-import { addList, deleteList, saveList, saveLists } from '../../modules/listFunctions';
+import { addList, deleteList, saveList, saveLists, exchangeList } from '../../modules/listFunctions';
 
 // TODO vh
 // TODO typescript
@@ -61,6 +57,7 @@ function App() {
                                 setList={setList}
                                 setChoice={setChoice}
                                 saveList={saveList}
+                                exchangeList={exchangeList}
                             />
                         );
                     })}
