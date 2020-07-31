@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 const DescriptionTextarea = styled.textarea`
-    margin-bottom: 5vh;
+    margin-bottom: calc(5 * var(--vh));
     outline: none;
     display: block;
     border: none;
-    font-size: 1.5vh;
+    font-size: calc(1.5 * var(--vh));
     width: 25vw;
     resize: none;
 `;

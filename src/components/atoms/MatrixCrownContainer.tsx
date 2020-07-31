@@ -4,13 +4,13 @@ const MatrixCrownContainer = styled.div`
     display: flex;
     overflow: scroll;
     justify-content: space-between;
-    height: 7.5vh;
-    padding: 4vh 4vh 0 4vh;
-    width: calc((90vw - 20vh) / 3);
-    lineHeight: 3.5vh;
+    height: calc(7.5 * var(--vh));
+    padding: calc(4 * var(--vh)) calc(4 * var(--vh)) 0 calc(4 * var(--vh));
+    width: calc((90vw - 20 * var(--vh)) / 3);
+    lineHeight: calc(3.5 * var(--vh));
     background: lightsteelblue;
     border: solid 1px darkslategray;
-    border-radius: 0.5vh 0.5vh 0 0;
+    border-radius: calc(0.5 * var(--vh)) calc(0.5 * var(--vh)) 0 0;
     border-bottom: none;
 `;
 

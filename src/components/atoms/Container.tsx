@@ -1,13 +1,12 @@
-// import styled from 'styled-components';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
     background: lightcyan;
-    min-width: calc(100vw - 10vh);
+    min-width: calc(100vw - 10 * var(--vh));
     overflow-x: scroll;
-    height: 82.5vh;
-    margin-top: 7.5vh;
-    padding: 5vh;
+    height: calc(82.5 * var(--vh));
+    margin-top: calc(7.5 * var(--vh));
+    padding: calc(5 * var(--vh));
     overflow-y: scroll;
 `;
 

@@ -1,4 +1,3 @@
-// import styled from 'styled-components';
 import styled from '@emotion/styled';
 
 const Crown = styled.div`
@@ -10,7 +9,7 @@ const Crown = styled.div`
     font-weight: bold;
     padding: 0;
     display: flex;
-    font-size: 4vh;
+    font-size: calc(4 * var(--vh));
     color: snow;
     user-select: none;
     text-align: center;

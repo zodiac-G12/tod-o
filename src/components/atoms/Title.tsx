@@ -1,10 +1,9 @@
-// import styled from 'styled-components';
 import styled from '@emotion/styled';
 
 const Title = styled.div`
-    margin-left: 1vh;
-    height: 7.5vh;
-    line-height: 7.5vh;
+    margin-left: calc(1 * var(--vh));
+    height: calc(7.5 * var(--vh));
+    line-height: calc(7.5 * var(--vh));
 `;
 
 export default Title;

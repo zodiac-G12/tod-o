@@ -10,7 +10,7 @@ const CrownHead = () => {
     return (
         <Crown>
             <Centerizer>
-                <TodoIcon height={"7.5vh"} width={"5vh"} />
+                <TodoIcon height={"calc(7.5 * var(--vh))"} width={"calc(5 * var(--vh))"} />
                 <Title>todo</Title>
             </Centerizer>
         </Crown>

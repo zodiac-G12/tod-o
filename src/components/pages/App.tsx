@@ -13,11 +13,10 @@ import Matrix from '../organisms/Matrix';
 import { sampleTodoDataFunc } from '../../modules/sampleTodoData';
 import { addList, deleteList, saveList, saveLists, exchangeList } from '../../modules/listFunctions';
 
-// TODO vh
 // TODO typescript
 // TODO Alert
 
-function App() {
+const App = () => {
     const todoDatas = localStorage.todoDatas && JSON.parse(localStorage.todoDatas).length!==0 ?
         JSON.parse(localStorage.todoDatas) : sampleTodoDataFunc(1, "TODO");
 

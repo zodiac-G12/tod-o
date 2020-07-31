@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 const NumEye = styled.div`
     margin-right: 1vw;
-    height: 3.5vh;
-    width: 3.5vh;
-    margin-top: -0.5vh;
-    line-height: 3.5vh;
+    height: calc(3.5 * var(--vh));
+    width: calc(3.5 * var(--vh));
+    margin-top: calc(-0.5 * var(--vh));
+    line-height: calc(3.5 * var(--vh));
     text-align: center;
     border-radius: 40%;
     color: white;

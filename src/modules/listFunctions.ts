@@ -66,6 +66,7 @@ export const deleteList = (choiced: number[], list: List): List => {
 };
 
 export const saveList = (key: string, value: string|number, id: number, list: List): List => {
+    console.log("savedList")
     const savedList = JSON.parse(JSON.stringify(list));
     let pointIdx: number|undefined;
     // absolutely exist "idx"

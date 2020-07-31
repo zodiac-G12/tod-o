@@ -8,7 +8,7 @@ const NumCat = (props) => {
             <NumEye>
                 {props.list.filter(item=>item.category===props.category).length}
             </NumEye>
-            <div style={{fontSize:"2vh", fontWeight:"bold"}}>{props.category}</div>
+            <div style={{fontSize:"calc(2 * var(--vh))", fontWeight:"bold"}}>{props.category}</div>
         </>
     );
 };
