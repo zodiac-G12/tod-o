@@ -3,6 +3,9 @@ import React from 'react';
 // dnd
 import { SortableElement } from 'react-sortable-hoc';
 
+// throttle-debounce
+import { throttle, debounce } from 'throttle-debounce';
+
 // material-ui components
 import GolfCourseIcon from '@material-ui/icons/GolfCourse';
 import Accordion from '@material-ui/core/Accordion';
@@ -40,6 +43,7 @@ const SortableItem = SortableElement((props) => (
                     choiced={props.choiced}
                     setList={props.setList}
                     setChoice={props.setChoice}
+                    category={props.category}
                     list={props.list}
                     saveList={props.saveList}
                 />
@@ -47,13 +51,16 @@ const SortableItem = SortableElement((props) => (
             </AccordionSummary>
             <AccordionDetails>
                 <Typography component={'div'} color="textSecondary">
+                    {/*description form*/}
                     <DescriptionTextarea
                         value={props.item.description}
                         onChange={(e)=>{
+                            console.log("in")
                             const value = e.target.value;
                             props.setList(props.saveList("description", value, props.item.id, props.list));
                         }}
                     />
+                    {/*completeness form*/}
                     <Flexy style={{marginBottom:"calc(2 * var(--vh))"}}>
                         <div style={{marginRight:"calc(1 * var(--vh))",color:"black"}}>Completeness:</div>
                         <GolfCourseIcon style={{marginRight:"calc(2 * var(--vh))"}}/>
@@ -62,14 +69,15 @@ const SortableItem = SortableElement((props) => (
                             aria-labelledby="discrete-slider-always"
                             step={1}
                             valueLabelDisplay="on"
-                            onChange={(_, n)=>{
+                            onChange={throttle(100, (_, n) => {
                                 if(Array.isArray(n)) return;
                                 if(n!==0 && !n) return;
                                 props.setList(props.saveList("completeness", n, props.item.id, props.list));
-                            }}
+                            }, false)}
                         />
                         <div style={{marginLeft:"calc(2 * var(--vh))", width:"calc(5 * var(--vh))", color:"black"}}>[%]</div>
                     </Flexy>
+                    {/*degree form*/}
                     {degrees.map(degree => {
                         return (
                             <Chip key={`ch-${degree}`} label={degree} style={{
@@ -82,6 +90,7 @@ const SortableItem = SortableElement((props) => (
                             />
                         );
                     })}
+                    {/*dead_line form*/}
                     <form>
                         <TextField
                             label={<div style={{color:"black"}}>Dead Line</div>}

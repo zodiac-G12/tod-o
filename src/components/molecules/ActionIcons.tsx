@@ -8,7 +8,11 @@ import GolfCourseIcon from '@material-ui/icons/GolfCourse';
 const ActionIcons = (props) => {
     return (
         <>
-            <AddIcon onClick={()=>{ props.setList(props.addList(props.category, props.list)); }} />
+            <AddIcon
+                onClick={()=>{
+                    props.setList(props.addList(props.category, props.list));
+                }}
+            />
             <DeleteIcon
                 onClick={()=>{
                     props.setList(props.deleteList(props.choiced, props.list));

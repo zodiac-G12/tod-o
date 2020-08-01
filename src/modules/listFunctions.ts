@@ -1,4 +1,5 @@
 import { sampleTodoDataFunc } from './sampleTodoData';
+import { minform } from './math';
 
 type ListItem = {
     id: number,
@@ -53,7 +54,8 @@ export const exchangeList = (id1: number, id2: number, list: List): List => {
 }
 
 export const addList = (category: string, list: List): List => {
-    const newId = list.length!==0 ? list[list.length-1].id + 1 : 1;
+    const ids = list.map(item => item.id );
+    const newId = list.length!==0 ? minform(0, ids.length, ids) : 0;
     const addedList = list.concat(sampleTodoDataFunc(newId, category));
     localStorage.todoDatas = JSON.stringify(addedList);
     return addedList;

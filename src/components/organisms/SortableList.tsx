@@ -18,6 +18,7 @@ const SortableList = SortableContainer((props) => {
                     collection={props.category}
                     index={index}
                     item={item}
+                    setCategorizedList={props.setCategorizedList}
                     list={props.list}
                     category={props.category}
                     choiced={props.choiced}

@@ -20,6 +20,7 @@ const MatrixCrown = (props) => {
                     choiced={props.choiced}
                     category={props.category}
                     setList={props.setList}
+                    setCategorizedList={props.setCategorizedList}
                     setChoice={props.setChoice}
                     addList={props.addList}
                     deleteList={props.deleteList}

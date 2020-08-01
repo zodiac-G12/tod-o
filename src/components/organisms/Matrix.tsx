@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 // dnd
-import arrayMove from 'array-move';
+// import arrayMove from 'array-move';
 
 // atoms components
 import MatrixContainer from '../atoms/MatrixContainer';
@@ -10,12 +10,10 @@ import MatrixContainer from '../atoms/MatrixContainer';
 import SortableList from './SortableList';
 
 const Matrix = (props) => {
-    const firstCategorizedListData = props.list.filter(item=>item.category===props.category);
-    const [categorizedList, setCategorizedList] = useState(firstCategorizedListData);
-
     const onSortEnd = ({oldIndex, newIndex, collection}) => {
-        setCategorizedList( arrayMove(categorizedList, oldIndex, newIndex) );
-        props.setList( props.exchangeList(categorizedList[oldIndex].id, categorizedList[newIndex].id, props.list) );
+        const filterdList = props.list.filter(item=>item.category===props.category);
+        console.log(filterdList)
+        props.setList( props.exchangeList(filterdList[oldIndex].id, filterdList[newIndex].id, props.list) );
     };
 
     return (
@@ -24,7 +22,6 @@ const Matrix = (props) => {
                 onSortEnd={onSortEnd}
                 useDragHandle={true}
                 lookAxis="y"
-
                 list={props.list}
                 category={props.category}
                 choiced={props.choiced}
