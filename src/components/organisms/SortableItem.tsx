@@ -55,9 +55,14 @@ const SortableItem = SortableElement((props) => (
                     <DescriptionTextarea
                         value={props.item.description}
                         onChange={(e)=>{
-                            console.log("in")
-                            const value = e.target.value;
-                            props.setList(props.saveList("description", value, props.item.id, props.list));
+                            (async() => {
+                                // FIXME too heavy
+                                console.log("in")
+                                const value = e.target.value;
+                                // e.target.value = value;
+                                // await (new Promise(resolve => setTimeout(resolve, 1000)));
+                                props.setList(props.saveList("description", value, props.item.id, props.list));
+                            })();
                         }}
                     />
                     {/*completeness form*/}

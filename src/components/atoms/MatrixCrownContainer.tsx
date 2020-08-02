@@ -6,7 +6,10 @@ const MatrixCrownContainer = styled.div`
     justify-content: space-between;
     height: calc(7.5 * var(--vh));
     padding: calc(4 * var(--vh)) calc(4 * var(--vh)) 0 calc(4 * var(--vh));
-    width: calc((90vw - 20 * var(--vh)) / 3);
+    width: ${()=>{
+        if (window.innerHeight < window.innerWidth) return "calc((90vw - 20 * var(--vh)) / 3)";
+        return "calc((135 * var(--vh) - 20 * var(--vh)) / 3);";
+    }};
     lineHeight: calc(3.5 * var(--vh));
     background: lightsteelblue;
     border: solid 1px darkslategray;

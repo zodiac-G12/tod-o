@@ -8,7 +8,10 @@ const MatrixContainer = styled.div`
     border-top: none;
     background: lightsteelblue;
     overflow-y: scroll;
-    width: calc((90vw - 20 * var(--vh)) / 3);
+    width: ${()=>{
+        if (window.innerHeight < window.innerWidth) return "calc((90vw - 20 * var(--vh)) / 3)";
+        return "calc((135 * var(--vh) - 20 * var(--vh)) / 3);";
+    }};
 `;
 
 export default MatrixContainer;

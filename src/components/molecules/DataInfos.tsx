@@ -15,20 +15,36 @@ const degreeToColorMap = {CRITICAL: "red", HIGH: "orange", MEDIUM: "green", PEND
 const DataInfos = (props) => {
     return (
         <Flex>
-            <Chip style={{marginLeft: "calc(-7 * var(--vh))", height: "calc(3 * var(--vh))", padding:"0", marginTop: "calc(0.5 * var(--vh))", color:"white",
-                background: degreeToColorMap[props.item.degree]
-            }} label={props.item.degree} />
             <Chip style={{
+                    fontSize: "calc(1.5 * var(--vh))",
+                    marginLeft: "calc(-7 * var(--vh))",
                     height: "calc(3 * var(--vh))",
-                    marginTop:"calc(0.5 * var(--vh))",
-                    marginLeft:"calc(0.5 * var(--vh))",
-                    color:"white",
+                    padding: "0",
+                    marginTop: "calc(0.5 * var(--vh))",
+                    color: "white",
+                    background: degreeToColorMap[props.item.degree]
+                }}
+                label={props.item.degree}
+            />
+            <Chip style={{
+                    fontSize: "calc(1.5 * var(--vh))",
+                    marginLeft: "calc(0.5 * var(--vh))",
+                    height: "calc(3 * var(--vh))",
+                    padding: "0",
+                    marginTop: "calc(0.5 * var(--vh))",
+                    color: "white",
                     background: `rgba(${Math.floor(255-255*parseInt(props.item.completeness)/100)},0,${Math.floor(255*parseInt(props.item.completeness)/100)},1)`
                 }}
                 label={props.item.completeness+"%"}
             />
             <Chip
-                style={{height: "calc(3 * var(--vh))", marginTop:"calc(0.5 * var(--vh))", marginLeft:"calc(0.5 * var(--vh))"}}
+                style={{
+                    fontSize: "calc(1.5 * var(--vh))",
+                    marginLeft: "calc(0.5 * var(--vh))",
+                    height: "calc(3 * var(--vh))",
+                    padding: "0",
+                    marginTop: "calc(0.5 * var(--vh))"
+                }}
                 label={new Date((new Date(props.item.dead_line) as any) - (new Date() as any)).getDate()-1+"days"}
             />
             <ListItemSecondaryAction>
