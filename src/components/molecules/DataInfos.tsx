@@ -33,7 +33,7 @@ const DataInfos = (props) => {
                     height: "calc(2.5 * var(--vh))",
                     marginTop: "calc(0.5 * var(--vh))",
                     color: "white",
-                    background: `rgba(${Math.floor(255-255*parseInt(props.item.completeness)/100)},0,${Math.floor(255*parseInt(props.item.completeness)/100)},1)`
+                    background: `rgba(${Math.floor(220-220*parseInt(props.item.completeness)/100)},20,${Math.floor(195*parseInt(props.item.completeness)/100+60)},1)`
                 }}
                 label={props.item.completeness+"%"}
             />
