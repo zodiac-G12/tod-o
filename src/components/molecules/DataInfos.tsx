@@ -12,8 +12,6 @@ import Chip from '@material-ui/core/Chip';
 import Flex from '../atoms/Flex';
 import DragHandle from '../atoms/DragHandle';
 
-const degreeToColorMap = {CRITICAL: "red", HIGH: "orange", MEDIUM: "green", PENDING: "indigo", LOW: "blue"};
-
 const DataInfos = (props) => {
     return (
         <Flex style={{padding: "calc(1 * var(--vh)) 0 0 calc(5 * var(--vh))"}}>
@@ -23,7 +21,7 @@ const DataInfos = (props) => {
                     height: "calc(2.5 * var(--vh))",
                     marginTop: "calc(0.5 * var(--vh))",
                     color: "white",
-                    background: degreeToColorMap[props.item.degree]
+                    background: props.degreeToColorMap[props.item.degree]
                 }}
                 label={props.item.degree}
             />
