@@ -8,9 +8,8 @@ const MatrixCrownContainer = styled.div`
     padding: calc(4 * var(--vh)) calc(4 * var(--vh)) 0 calc(4 * var(--vh));
     width: ${()=>{
         if (window.innerHeight < window.innerWidth) return "calc((90vw - 20 * var(--vh)) / 3)";
-        return "calc((135 * var(--vh) - 20 * var(--vh)) / 3);";
+        return "calc((135 * var(--vh) - 20 * var(--vh)) / 3)";
     }};
-    lineHeight: calc(3.5 * var(--vh));
     background: lightsteelblue;
     border: solid 1px darkslategray;
     border-radius: calc(0.5 * var(--vh)) calc(0.5 * var(--vh)) 0 0;

@@ -5,9 +5,13 @@ const DescriptionTextarea = styled.textarea`
     outline: none;
     display: block;
     border: none;
-    font-size: calc(1.5 * var(--vh));
-    width: 25vw;
+    font-size: calc(2 * var(--vh));
+    width: 90%;
     resize: none;
+    text-wrap: nowrap;
+    overflow-wrap: break-word;
+    height: auto;
+    padding: 0;
 `;
 
 export default DescriptionTextarea;

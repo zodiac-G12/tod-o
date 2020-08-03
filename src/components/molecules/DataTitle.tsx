@@ -10,12 +10,14 @@ import TitleInput from '../atoms/TitleInput';
 const DataTitle = (props) => {
     return (
         <FormControlLabel
-            aria-label="Acknowledge"
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
+            style={{marginLeft: 0, height: "calc(1.5 * var(--vh))", padding: "calc(1 * var(--vh))", fontSize: "calc(1.5 * var(--vh))"}}
             control={
                 <Checkbox
                     value={props.item.id}
+                    style={{marginTop: "calc(4 * var(--vh))", fontSize: "calc(1.5 * var(--vh))", width: 0,
+                        transform: `${window.innerHeight > window.innerWidth ? "scale(0.8, 0.8)" : "scale(1,1)"}`}}
                     checked={props.choiced.includes(props.item.id)}
                     onClick={(e)=>{
                         const id = parseInt((e.target as HTMLInputElement).value);
@@ -39,5 +41,6 @@ const DataTitle = (props) => {
         />
     );
 };
+
 
 export default DataTitle;

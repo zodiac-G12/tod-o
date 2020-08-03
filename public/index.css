@@ -2,14 +2,6 @@
     --vh: var(--ovh, 1vh);
 }
 
-@media screen and (orientation: portrait) {
-    --container-width: calc(150 * var(--ovh, 1vh));
-}
-
-@media screen and (orientation: landscape) {
-    --container-width: 100vw;
-}
-
 body {
     padding: 0;
     margin: 0;

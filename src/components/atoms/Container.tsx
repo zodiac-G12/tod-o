@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const Container = styled.div`
     background: lightcyan;
     width: ${()=>{
-        if (window.innerHeight < window.innerWidth) return "100vw";
+        if (window.innerHeight < window.innerWidth) return "auto";
         return "calc(150 * var(--vh))";
     }};
     height: calc(82.5 * var(--vh));

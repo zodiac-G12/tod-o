@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { withStyles } from '@material-ui/core/styles';
+
 // material-ui components for dnd
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
@@ -14,44 +16,47 @@ const degreeToColorMap = {CRITICAL: "red", HIGH: "orange", MEDIUM: "green", PEND
 
 const DataInfos = (props) => {
     return (
-        <Flex>
-            <Chip style={{
-                    fontSize: "calc(1.5 * var(--vh))",
-                    marginLeft: "calc(-7 * var(--vh))",
-                    height: "calc(3 * var(--vh))",
-                    padding: "0",
+        <Flex style={{padding: "calc(1 * var(--vh)) 0 0 calc(5 * var(--vh))"}}>
+            <StyledChip style={{
+                    fontSize: "calc(1.2 * var(--vh))",
+                    // marginLeft: "calc(7 * var(--vh))",
+                    height: "calc(2.5 * var(--vh))",
                     marginTop: "calc(0.5 * var(--vh))",
                     color: "white",
                     background: degreeToColorMap[props.item.degree]
                 }}
                 label={props.item.degree}
             />
-            <Chip style={{
-                    fontSize: "calc(1.5 * var(--vh))",
+            <StyledChip style={{
+                    fontSize: "calc(1.2 * var(--vh))",
                     marginLeft: "calc(0.5 * var(--vh))",
-                    height: "calc(3 * var(--vh))",
-                    padding: "0",
+                    height: "calc(2.5 * var(--vh))",
                     marginTop: "calc(0.5 * var(--vh))",
                     color: "white",
                     background: `rgba(${Math.floor(255-255*parseInt(props.item.completeness)/100)},0,${Math.floor(255*parseInt(props.item.completeness)/100)},1)`
                 }}
                 label={props.item.completeness+"%"}
             />
-            <Chip
+            <StyledChip
                 style={{
-                    fontSize: "calc(1.5 * var(--vh))",
+                    fontSize: "calc(1.2 * var(--vh))",
                     marginLeft: "calc(0.5 * var(--vh))",
-                    height: "calc(3 * var(--vh))",
-                    padding: "0",
+                    height: "calc(2.5 * var(--vh))",
                     marginTop: "calc(0.5 * var(--vh))"
                 }}
                 label={new Date((new Date(props.item.dead_line) as any) - (new Date() as any)).getDate()-1+"days"}
             />
-            <ListItemSecondaryAction>
+            <ListItemSecondaryAction style={{padding:"0"}}>
                 <DragHandle />
             </ListItemSecondaryAction>
         </Flex>
     );
 }
+
+const StyledChip = withStyles({
+    label: {
+        padding: "0 calc(1 * var(--vh))"
+    }
+})(Chip);
 
 export default DataInfos;

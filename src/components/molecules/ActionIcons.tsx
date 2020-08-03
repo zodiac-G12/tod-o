@@ -9,11 +9,13 @@ const ActionIcons = (props) => {
     return (
         <>
             <AddIcon
+                style={{fontSize: "calc(2.5 * var(--vh))"}}
                 onClick={()=>{
                     props.setList(props.addList(props.category, props.list));
                 }}
             />
             <DeleteIcon
+                style={{fontSize: "calc(2.5 * var(--vh))"}}
                 onClick={()=>{
                     props.setList(props.deleteList(props.choiced, props.list));
                     props.setChoice([]);
@@ -21,6 +23,7 @@ const ActionIcons = (props) => {
             />
             {props.category==="TODO" && (
                 <FitnessCenterIcon
+                    style={{fontSize: "calc(2.5 * var(--vh))"}}
                     onClick={()=>{
                         props.setList(props.saveLists("category", "PROGRESS", props.choiced, props.list));
                         props.setChoice([]);
@@ -29,6 +32,7 @@ const ActionIcons = (props) => {
             )}
             {props.category==="PROGRESS" && (
                 <GolfCourseIcon
+                    style={{fontSize: "calc(2.5 * var(--vh))"}}
                     onClick={()=>{
                         props.setList(props.saveLists("category", "DONE", props.choiced, props.list));
                         props.setChoice([]);
