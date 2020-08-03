@@ -111,7 +111,7 @@ const SortableItem = SortableElement((props) => (
                                     marginBottom: "calc(1.5 * var(--vh))",
                                     marginRight: "calc(0.5 * var(--vh))",
                                     height: "calc(2.5 * var(--vh))",
-                                    lineHeight: "calc(2.5 * var(--vh))",
+                                    lineHeight: "calc(2.6 * var(--vh))",
                                     fontSize: "calc(1.2 * var(--vh))",
                                     color: props.item.degree!==degree?"rgba(0,0,0,0.87)":"white",
                                     background: props.item.degree!==degree?"#e0e0e0": degreeToColorMap[props.item.degree]
@@ -128,14 +128,15 @@ const SortableItem = SortableElement((props) => (
                         label={
                             <div style={{
                                     fontSize: "calc(2.5 * var(--vh))",
-                                    color:"black"
+                                    color: "black",
+                                    lineHeight: "calc(0 * var(--vh))"
                             }}>
                                 Dead Line
                             </div>
                         }
                         type="datetime-local"
                         style={{
-                            marginTop:"calc(2 * var(--vh))",
+                            marginTop: "calc(2 * var(--vh))",
                         }}
                         defaultValue={props.item.dead_line.replace(/\//g,"-").replace(" ","T")}
                         InputLabelProps={{
@@ -158,8 +159,8 @@ const StyledChip = withStyles({
 })(Chip);
 const StyledTextField = withStyles({
     root: {
-        fontSize: "calc(1.5 * var(--vh))"
-    }
+        fontSize: "calc(1.5 * var(--vh))",
+    },
 })(TextField);
 const StyledAccordionSummary = withStyles({
     expandIcon: {

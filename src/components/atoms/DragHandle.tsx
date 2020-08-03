@@ -6,7 +6,7 @@ import DragHandleIcon from '@material-ui/icons/DragHandle';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 const DragHandle = SortableHandle(() => (
-    <ListItemIcon style={{padding:"0", minWidth: "calc(2.5 * var(--vh))", marginRight: "calc(1 * var(--vh))"}}>
+    <ListItemIcon style={{padding: "calc(var(--vh))", minWidth: "calc(2.5 * var(--vh))", marginRight: "calc(1 * var(--vh))"}}>
         <DragHandleIcon
             style={{fontSize: "calc(2.5 * var(--vh))", padding:"0"}}
         />
