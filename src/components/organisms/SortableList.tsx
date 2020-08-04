@@ -25,6 +25,8 @@ const SortableList = SortableContainer((props) => {
                     setList={props.setList}
                     setChoice={props.setChoice}
                     saveList={props.saveList}
+                    degreeToColorMap={props.degreeToColorMap}
+                    degrees={props.degrees}
                 />
             ))}
         </OriginalUl>

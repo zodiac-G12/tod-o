@@ -1,4 +1,4 @@
-export const minform = (a: number, n: number, xs: number[]) => {
+export const minform = (a: number, n: number, xs: number[]): number => {
     const b = a + 1 + Math.floor(n / 2);
     const us = xs.filter(i => i < b);
     const vs = xs.filter(i => i >= b);

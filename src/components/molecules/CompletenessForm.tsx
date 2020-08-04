@@ -2,7 +2,7 @@ import React from 'react';
 
 import GolfCourseIcon from '@material-ui/icons/GolfCourse';
 import Slider from '@material-ui/core/Slider';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import Flex from '../atoms/Flex';
 
 // throttle-debounce

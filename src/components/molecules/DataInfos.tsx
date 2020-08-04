@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // material-ui components for dnd
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';

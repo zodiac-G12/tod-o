@@ -1,8 +1,5 @@
 import React from 'react';
 
-// dnd
-// import arrayMove from 'array-move';
-
 // atoms components
 import MatrixContainer from '../atoms/MatrixContainer';
 
@@ -28,6 +25,8 @@ const Matrix = (props) => {
                 setList={props.setList}
                 setChoice={props.setChoice}
                 saveList={props.saveList}
+                degreeToColorMap={props.degreeToColorMap}
+                degrees={props.degrees}
             />
         </MatrixContainer>
     );
