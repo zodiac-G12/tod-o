@@ -15,8 +15,12 @@ import { addList, deleteList, saveList, saveLists, exchangeList } from '../../mo
 
 
 const App = () => {
+    const packageJson = require("../../../package.json");
+    const appVersion = packageJson.version;
+    localStorage.appVersion = appVersion;
+
     const todoDatas = localStorage.todoDatas && JSON.parse(localStorage.todoDatas).length!==0 ?
-        JSON.parse(localStorage.todoDatas) : sampleTodoDataFunc(1, "TODO");
+        JSON.parse(localStorage.todoDatas) : sampleTodoDataFunc(0, "TODO");
 
     const categories = ["TODO", "PROGRESS", "DONE"];
     const degrees = ["LOW", "MEDIUM", "HIGH", "CRITICAL", "PENDING"];

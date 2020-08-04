@@ -31,6 +31,7 @@ export const exchangeList = (id1: number, id2: number, list: List): List => {
         }
         return false;
     });
+
     if (pointIdx1 !== 0 && !pointIdx1) return savedList;
 
     // absolutely exist "idx"
@@ -41,6 +42,7 @@ export const exchangeList = (id1: number, id2: number, list: List): List => {
         }
         return false;
     });
+
     if (pointIdx2 !== 0 && !pointIdx2) return savedList;
 
     const item1 = savedList[pointIdx1],
@@ -50,6 +52,7 @@ export const exchangeList = (id1: number, id2: number, list: List): List => {
     savedList[pointIdx1] = item2;
 
     localStorage.todoDatas = JSON.stringify(savedList);
+
     return savedList;
 }
 
@@ -57,13 +60,17 @@ export const addList = (category: string, list: List): List => {
     const ids = list.map(item => item.id );
     const newId = list.length!==0 ? minform(0, ids.length, ids) : 0;
     const addedList = list.concat(sampleTodoDataFunc(newId, category));
+
     localStorage.todoDatas = JSON.stringify(addedList);
+
     return addedList;
 };
 
 export const deleteList = (choiced: number[], list: List): List => {
     const deletedList = list.filter((item)=>!choiced.includes(item.id));
+
     localStorage.todoDatas = JSON.stringify(deletedList);
+
     return deletedList;
 };
 
@@ -71,6 +78,7 @@ export const saveList = (key: string, value: string|number, id: number, list: Li
     console.log("savedList")
     const savedList = JSON.parse(JSON.stringify(list));
     let pointIdx: number|undefined;
+
     // absolutely exist "idx"
     savedList.some((item: ListItem, idx: number)=>{
         if (item.id===id) {
@@ -79,16 +87,20 @@ export const saveList = (key: string, value: string|number, id: number, list: Li
         }
         return false;
     });
+
     if (pointIdx !== 0 && !pointIdx) return savedList;
     if (value==="PROGRESS" && savedList[pointIdx][key]!=="TODO") return savedList;
     if (value==="DONE" && savedList[pointIdx][key]!=="PROGRESS") return savedList;
+
     savedList[pointIdx][key] = value;
     localStorage.todoDatas = JSON.stringify(savedList);
+
     return savedList;
 };
 
 export const saveLists = (key: string, value: string|number, choiced: number[], list: List): List => {
     const savedList = JSON.parse(JSON.stringify(list));
+
     choiced.forEach(id=>{
         let pointIdx: number|undefined;
         savedList.some((item: ListItem, idx: number)=>{
@@ -103,6 +115,8 @@ export const saveLists = (key: string, value: string|number, choiced: number[], 
         if (value==="DONE" && savedList[pointIdx][key]!=="PROGRESS") return;
         savedList[pointIdx][key] = value;
     });
+
     localStorage.todoDatas = JSON.stringify(savedList);
+
     return savedList;
 };
