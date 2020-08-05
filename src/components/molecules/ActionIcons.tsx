@@ -1,5 +1,6 @@
 import React from 'react';
 
+// material-ui components
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';

@@ -1,8 +1,12 @@
 import React from 'react';
 
+// material-ui withStyles
 import withStyles from '@material-ui/core/styles/withStyles';
 
+// material-ui components
 import Chip from '@material-ui/core/Chip';
+
+// atoms components
 import Flex from '../atoms/Flex';
 
 const DegreesForm = (props) => {

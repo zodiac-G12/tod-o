@@ -1,8 +1,10 @@
 import React from 'react';
 
+// molecules components
 import DataInfos from '../molecules/DataInfos';
 import DataTitle from '../molecules/DataTitle';
 
+// atoms components
 import AccordionSummaryAndExpandIcon from '../atoms/AccordionSummaryAndExpandIcon';
 
 const AccordionSummaryView = (props) => {

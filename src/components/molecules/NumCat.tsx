@@ -1,5 +1,6 @@
 import React from 'react';
 
+// atoms components
 import NumEye from '../atoms/NumEye';
 
 const NumCat = (props) => {

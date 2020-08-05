@@ -1,3 +1,4 @@
+// 最小自由数を求めるアルゴリズム
 export const minform = (a: number, n: number, xs: number[]): number => {
     const b = a + 1 + Math.floor(n / 2);
     const us = xs.filter(i => i < b);

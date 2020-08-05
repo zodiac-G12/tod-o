@@ -1,10 +1,13 @@
 import React from 'react';
 
+// material-ui components
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 
+// atoms components
 import DescriptionForm from '../atoms/DescriptionForm';
 
+// molecules components
 import DeadLineForm from '../molecules/DeadLineForm';
 import CompletenessForm from '../molecules/CompletenessForm';
 import DegreesForm from '../molecules/DegreesForm';

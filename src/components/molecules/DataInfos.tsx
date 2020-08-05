@@ -1,5 +1,6 @@
 import React from 'react';
 
+// material-ui withStyles
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // material-ui components for dnd

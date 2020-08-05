@@ -1,8 +1,11 @@
 import React from 'react';
 
+// material-ui components
 import GolfCourseIcon from '@material-ui/icons/GolfCourse';
 import Slider from '@material-ui/core/Slider';
 import withStyles from '@material-ui/core/styles/withStyles';
+
+// atoms components
 import Flex from '../atoms/Flex';
 
 // throttle-debounce
