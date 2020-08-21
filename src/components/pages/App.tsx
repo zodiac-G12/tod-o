@@ -17,8 +17,8 @@ import { addList, deleteList, saveList, saveLists, exchangeList } from '../../mo
 
 const App = () => {
 
-    //const url = "https://us-central1-zarashi.cloudfunctions.net/graphql";
-    const url = "http://localhost:5001/zarashi/us-central1/graphql";
+    const url = "https://us-central1-zarashi.cloudfunctions.net/graphql";
+    // const url = "http://localhost:5001/zarashi/us-central1/graphql";
     const data = {
         operationName: null,
         query: `
