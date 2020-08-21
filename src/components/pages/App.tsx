@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 // atoms components
 import Flexy from '../atoms/Flexy';
@@ -15,6 +16,32 @@ import { addList, deleteList, saveList, saveLists, exchangeList } from '../../mo
 
 
 const App = () => {
+
+    //const url = "https://us-central1-zarashi.cloudfunctions.net/graphql";
+    const url = "http://localhost:5001/zarashi/us-central1/graphql";
+    const data = {
+        operationName: null,
+        query: `
+            query {
+                books {
+                    title
+                }
+            }
+        `,
+        variables: {}
+    };
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': '*/*'
+    };
+
+    axios({url: url, method: 'POST', headers: headers, data: data})//body, options})
+        .then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
+        });
+
     const packageJson = require("../../../package.json");
     const appVersion = packageJson.version;
     localStorage.appVersion = appVersion;
